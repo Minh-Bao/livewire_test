@@ -116,7 +116,7 @@ class HelloWorld extends Component
     public function removeContact($name){
             User::whereName($name)->delete();
             //to refresh the page 
-            $this->contacts = User::all();
+            $this->contact = User::all();
     }  
     
     //EVENTS/////////

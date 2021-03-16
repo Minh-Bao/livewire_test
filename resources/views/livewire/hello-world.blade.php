@@ -13,16 +13,16 @@
     @endforeach
 
     <hr>
+    
+    <button wire:click="$emit('refreshChildren')">refreshChildrenOnly</button>
+    <button wire:click="refreshChildren">refreshChildrenAndParent</button>
     {{now()}}
-
-
-    <button wire:click="refreshChildren">refreshChildren</button>
 </div>
 
 
 
-
-<div>
+<!--
+ <div>
     <br>---------------------------------------------- <br>
     NESTING COMPONENTS : (review the key concept for nested component prevent bug..)<br><br>
 
@@ -89,7 +89,7 @@
         <span style="color:grey">Reset the input and the shown text in pink</span>
     </form>
 </div>
-
+-->
 
 {{--In order to this component to fully work place this div in top of code or remove previous div...... (a revoir ...) --}}
 

@@ -23,16 +23,20 @@ class SayHi extends Component
      *
      * @var array
      */
-    protected $listeners = ['refreshChildren' => 'refreshMe'];
+    protected $listeners = ['refreshChildren'];
 
     /**
      * refresh children
      *
      * @return void
+     * 
      */
-    public function refreshMe(){
+    public function refreshChildren(){
         //
     }
+
+    //Or simply do => and put inn parameter a native livewire event like $refresh
+   // protected $listeners = ['refreshChildren' => '$refresh'];
 
     public function mount(User $contact){
         $this->contact = $contact;
