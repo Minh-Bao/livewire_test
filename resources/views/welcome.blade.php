@@ -9,15 +9,16 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
-        <!-- Styles -->
-        <link href="{{asset('css/normalize.css')}}" rel="stylesheet">
+        <!-- Styles tailwind lite normalize -->
+        {{-- <link href="{{asset('css/normalize.css')}}" rel="stylesheet"> --}}
 
         @livewireStyles
 
     </head>
     <body >
 
-        
+
+        {{-- TEST3 name variable assigned and used in the mount view --}}
         @livewire('hello-world')
 
         

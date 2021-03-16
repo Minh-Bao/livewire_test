@@ -1,13 +1,62 @@
 <div>
+    <br>---------------------------------------------- <br>
+    EVENTS: REMOVE next section to use thse setion <br><br>
+    
+    @foreach ($contacts as $contact)
+    
+        <div>
+            @livewire('say-hi', ['contact' => $contact], key($contact->name))
+
+            <button wire:click="removeContact('{{$contact->name}}')">Remove</button>
+        </div>
+        
+    @endforeach
+
+    <hr>
+    {{now()}}
+
+
+    <button wire:click="refreshChildren">refreshChildren</button>
+</div>
+
+
+
+
+<div>
+    <br>---------------------------------------------- <br>
+    NESTING COMPONENTS : (review the key concept for nested component prevent bug..)<br><br>
+
+    @foreach ($contacts as $contact)
+    
+        <div>
+            @livewire('say-hi', ['contact' => $contact], key($contact->name))
+
+            <button wire:click="removeContact('{{$contact->name}}')">Remove</button>
+        </div>
+        
+    @endforeach
+
+    <hr>
+    <button wire:click="$refresh">refresh</button>
+    {{now()}}
+</div>
+
+
+<div>
+    //////////////////////////// <a href="https://laravel-livewire.com/screencasts" target="_blank" >LIVEWIRE VIDEO TUTO </a>  \\\\\\\\\\\\\\\\\\\\\\\\\
+
+    <br>---------------------------------------------- <br>
+    DATABINDING :<br><br>
 
     {{--TESTBIND Bind modelexamople --}}
-    <input style="color:rgb(207, 66, 89)" wire:model="name" type="text">
+    <input style="color:rgb(207, 66, 89);" wire:model="name" type="text">
     <input wire:model="loud" type="checkbox">
 
     {{--TESTBIND Bind modelexamople next... --}}
     hello world <span style="color:rgb(180, 50, 72)">{{$name}}</span>  @if ($loud) !  @endif
 
-    <hr>---------------------------------------------- <br>
+    <br>---------------------------------------------- <br>
+    ACTION :<br><br>
 
     {{-- TEST1 instead of classical select use of laravel/collective--}}
     {!! Form::select("test", $list, null, ["wire:model" => "greeting","style" => "color:blue"]) !!}
@@ -19,7 +68,7 @@
     </span>
     @endif
 
-    <hr>---------------------------------------------- <br>
+    <br>---------------------------------------------- <br>
 
 
     {{-- TEST2 function need in controller  --}}
@@ -32,11 +81,16 @@
     {{-- TEST2 no form needeed --}}
     {{-- <button wire:mouseenter="resetName('bindo')">Reset name </button> --}}
 
-    <hr>---------------------------------------------- <br>
+    <br>---------------------------------------------- <br>
 
-    {{-- TEST#  no function needed in onctroller --}}
+    {{-- TEST#  no function needed in controller we set the $name variable directly in the blade view --}}
     <form action="#" wire:submit.prevent="$set('name', 'TESTRER')">
         <button >RAIZETTE</button>
         <span style="color:grey">Reset the input and the shown text in pink</span>
     </form>
 </div>
+
+
+{{--In order to this component to fully work place this div in top of code or remove previous div...... (a revoir ...) --}}
+
+
