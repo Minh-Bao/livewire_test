@@ -1,0 +1,7 @@
+{
+    "tailwindCSS.emmetCompletions": true,
+    "emmet.showSuggestionsAsSnippets": true,
+    "emmet.includeLanguages": {
+        "blade": "html"
+    }
+}
