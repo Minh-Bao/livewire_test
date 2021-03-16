@@ -16,9 +16,11 @@
 
     </head>
     <body >
-        @livewire('jello-world')
 
+        
+        @livewire('hello-world')
 
+        
         @livewireScripts
     </body>
 </html>
