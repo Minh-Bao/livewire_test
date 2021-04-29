@@ -1,6 +1,6 @@
 <div>
     <br>---------------------------------------------- <br>
-    EVENTS: REMOVE next section to use thse setion <br><br>
+    EVENTS: REMOVE next section to use these section <br><br>
     
     @foreach ($contacts as $contact)
     
@@ -16,7 +16,8 @@
     
     <button wire:click="$emit('refreshChildren')">refreshChildrenOnly</button>
     <button wire:click="refreshChildren">refreshChildrenAndParent</button>
-    {{now()}}
+
+    {{ now() }}
 </div>
 
 
